@@ -5,10 +5,17 @@ const bookModel = require('../models/book')
 const booksPath = path.join(__dirname, '..', 'data', 'books.json');
 
 // Read all books
-const readAll = (req, res) => {
-  const books = bookModel.readAll();
+const showAll = (req, res) => {
+  const books = bookModel.showAll();
   res.send(books);
 };
+
+// Read individual
+const read = (req, res) => {
+  const book = bookModel.read();
+  res.send(book);
+};
+
 
 // Create a new book
 const create = (req, res) => {
@@ -26,6 +33,7 @@ const create = (req, res) => {
 
 
 module.exports = {
-  readAll,
-  create
+  showAll,
+  create,
+  // read
 }
