@@ -9,11 +9,11 @@ const booksController = require('../controllers/books');
 // Books data path
 const booksPath = path.join(__dirname, '..', 'data', 'books.json');
 
-//READ (All)
-router.get('/', booksController.readAll);
+//Show (All)
+router.get('/', booksController.showAll);
 
-// READ (Individual)
-// router.get('/:id', booksController.read);
+// Show (Individual)
+router.get('/:id', booksController.showOne);
 
 //CREATE
 router.post('/', booksController.create);
