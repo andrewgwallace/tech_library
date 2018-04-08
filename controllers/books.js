@@ -12,7 +12,7 @@ const showAll = (req, res) => {
 
 // Show individual
 const showOne = (req, res) => {
-  const book = bookModel.showOne[req.params.id];
+  const book = bookModel.showOne(req);
   res.send(book);
 };
 

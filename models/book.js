@@ -13,13 +13,9 @@ const showAll = () => {
 }
 
 // Show individual book
-const showOne = (books.filter(book => {
-  // const book = books[req.params.id];
-  return book.id;
-});
-let book = showOne[0]
-
-
+const showOne = (req) => {
+  return books.filter(book => book.id === req.params.id);
+}
 
 // Create a new book
 const create = (req) => {
