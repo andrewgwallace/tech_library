@@ -10,9 +10,9 @@ const showAll = (req, res) => {
   res.send(books);
 };
 
-// Read individual
+// Show individual
 const showOne = (req, res) => {
-  const book = bookModel.showOne()
+  const book = bookModel.showOne[req.params.id];
   res.send(book);
 };
 

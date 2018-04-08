@@ -5,7 +5,7 @@ const uuid = require('uuid/v1');
 // Paths to relevant files and directories
 const booksPath = path.join(__dirname, '..', 'data', 'books.json');
 const booksJSON = fs.readFileSync(booksPath, 'utf8');
-let books = JSON.parse(booksJSON);
+const books = JSON.parse(booksJSON);
 
 // Show all books
 const showAll = () => {
@@ -13,10 +13,13 @@ const showAll = () => {
 }
 
 // Show individual book
-const showOne = (req, res) => {
-  const book = books[req.params.id];
-  return book;
-}
+const showOne = (books.filter(book => {
+  // const book = books[req.params.id];
+  return book.id;
+});
+let book = showOne[0]
+
+
 
 // Create a new book
 const create = (req) => {
