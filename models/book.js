@@ -19,7 +19,6 @@ const showOne = (req) => {
 
 // Create a new book
 const create = (req) => {
-  // let currentBooks = JSON.parse(booksJSON);
   let newBook = {
     id: uuid(),
     name: req.body.name,
@@ -33,8 +32,23 @@ const create = (req) => {
   return newBook;
 }
 
+// Update a new book
+const update = (req) => {
+  let bookArr = books.filter(book => book.id === req.params.id);
+  let book = bookArr[0];
+    book.name = req.body.name || book.name,
+    book.borrowed = JSON.parse(req.body.borrowed) || book.borrowed,
+    book.description = req.body.description || book.description
+  let updatedBooksJSON = JSON.stringify(books);
+  fs.writeFileSync(booksPath, updatedBooksJSON);
+  return book;
+}
+
+
 module.exports = {
   showAll,
   create,
-  showOne /*update, destroy */
+  showOne,
+  update
+  // , destroy */
 }

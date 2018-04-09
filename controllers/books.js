@@ -18,21 +18,20 @@ const showOne = (req, res) => {
 
 // Create a new book
 const create = (req, res) => {
-  const newBook = bookModel.create(req, res);
+  const newBook = bookModel.create(req);
   res.send(newBook);
 }
 
-
-
-
-
-
-
-
+// Update a book
+const update = (req, res) => {
+  let book = bookModel.update(req);
+  res.send(book);
+}
 
 
 module.exports = {
   showAll,
   create,
-  showOne
+  showOne,
+  update
 }

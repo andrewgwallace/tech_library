@@ -1,4 +1,5 @@
 const express = require('express');
+const morgan = require('morgan');
 const app = express();
 const PORT = process.env.PORT || 3005;
 const bookRoutes = require('./routes/books');
@@ -6,6 +7,8 @@ const bookRoutes = require('./routes/books');
 // JSON BODY PARSER
 app.use(express.json()); //body-parser
 
+// HTTP Request Logger
+app.use(morgan('combined'));
 // ROUTES
 
 // ROOT
