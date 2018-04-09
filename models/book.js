@@ -22,7 +22,7 @@ const create = (req) => {
   let newBook = {
     id: uuid(),
     name: req.body.name,
-    borrowed: false,
+    borrowed: req.body.borrowed,
     description: req.body.description,
     author_ids: []
   };
