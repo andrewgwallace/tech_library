@@ -44,11 +44,19 @@ const update = (req) => {
   return book;
 }
 
+const destroy = (req) => {
+  let bookArr = books.filter(book => book.id === req.params.id);
+  let book = bookArr[0];
+  let bookIndex = books.map(book => {
+    return book.id;}).indexOf(book.id);
+  books.remove(bookIndex)
+  return books;
+}
 
 module.exports = {
   showAll,
   create,
   showOne,
-  update
-  // , destroy */
+  update,
+  destroy
 }

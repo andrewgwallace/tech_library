@@ -1,5 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
+require('./public/js/scripts.js')
 const app = express();
 const PORT = process.env.PORT || 3005;
 const bookRoutes = require('./routes/books');

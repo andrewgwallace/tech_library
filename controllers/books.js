@@ -28,10 +28,17 @@ const update = (req, res) => {
   res.send(book);
 }
 
+// Delete a book
+const destroy = (req, res) => {
+  let book = bookModel.destroy(req)
+  res.send(books)
+}
+
 
 module.exports = {
   showAll,
   create,
   showOne,
-  update
+  update,
+  destroy
 }

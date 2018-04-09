@@ -20,11 +20,9 @@ router.post('/', booksController.create);
 
 //UPDATE
 router.put('/:id', booksController.update);
-// router.put('/:id', (req, res) => {
-//     res.send("PUT request successful")
-// });
-//DELETE
 
+//DESTROY
+router.delete('/:id', booksController.destroy);
 
 
 module.exports = router;
